@@ -1,0 +1,270 @@
+/* ===== COLOUR THEME ===== */
+:root {
+  --burgundy: #4a071d;
+  --burgundy-dark: #25030e;
+  --burgundy-light: #700f32;
+  --rose: #e84d78;
+  --cream: #fff4ed;
+  --muted: #e2cbd2;
+  --card: #390719;
+  --border: #70213d;
+}
+
+/* ===== GENERAL STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--burgundy-dark);
+  color: var(--cream);
+  line-height: 1.7;
+}
+
+/* ===== NAVIGATION ===== */
+header {
+  background: var(--burgundy);
+  padding: 20px 7%;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  color: var(--cream);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--rose);
+}
+
+/* ===== GENERAL SECTIONS ===== */
+section {
+  padding: 75px 9%;
+  border-bottom: 1px solid var(--border);
+}
+
+section h2 {
+  color: var(--rose);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+section p {
+  color: var(--muted);
+  margin-bottom: 15px;
+  max-width: 800px;
+}
+
+/* ===== MY PORTFOLIO / HERO ===== */
+#myportfolio {
+  background:
+    radial-gradient(circle at top left, #650d2b 0, transparent 45%),
+    linear-gradient(135deg, var(--burgundy-dark), var(--burgundy));
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+}
+
+.profile-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  border: 6px solid var(--rose);
+  box-shadow: 0 0 30px #e84d7830;
+  flex-shrink: 0;
+}
+
+.intro-text {
+  max-width: 700px;
+}
+
+.intro-text h2 {
+  color: var(--cream);
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 1.05rem;
+}
+
+/* ===== ABOUT ===== */
+#about {
+  background: #300410;
+}
+
+/* ===== SKILLS ===== */
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+}
+
+#skills li {
+  background: var(--card);
+  color: var(--cream);
+  padding: 12px 24px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+#skills li:hover {
+  background: var(--burgundy-light);
+  border-color: var(--rose);
+  transform: translateY(-4px);
+}
+
+/* ===== PROJECTS ===== */
+#projects ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  list-style: none;
+}
+
+#projects li {
+  background: var(--card);
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+#projects li:hover {
+  transform: translateY(-5px);
+  border-color: var(--rose);
+  box-shadow: 0 8px 25px #00000025;
+}
+
+/* ===== CONTACTS ===== */
+#contacts {
+  background: #300410;
+}
+
+#contacts a {
+  display: inline-block;
+  background: var(--rose);
+  color: #25030e;
+  padding: 12px 25px;
+  margin-top: 10px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+#contacts a:hover {
+  background: var(--cream);
+  transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: var(--burgundy);
+  color: var(--muted);
+}
+
+/* ===== TABLETS AND PHONES ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 18px 5%;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav h1 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 55px 7%;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .intro-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #projects ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.82rem;
+  }
+
+  .profile-img {
+    width: 170px;
+    height: 170px;
+  }
+
+  section h2 {
+    font-size: 1.7rem;
+  }
+}
